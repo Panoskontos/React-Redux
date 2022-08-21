@@ -104,6 +104,39 @@
         display: none;
       }
 
+      #modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+
+      }
+
+      #modal .modal-container{
+        max-width: 600px;
+        background: white;
+        padding: 20px;
+      }
+
+      #modal .modal-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+      }
+
+      #modal .modal-grid .images{
+        width: 200px;
+      }
+
+      .cover{
+        height: 300px;
+        width: 200px;
+      }
     </style>
   </head>
   <body>
@@ -173,10 +206,19 @@
     </div>
 
     <section id="modal" class="active">
+      <div class="modal-container">
       <div class="modal-grid">
         <div class="images">
-          <div class="cover">
-            Cover image
+          <div class="cover"  style="
+          background-image: url('https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/1402/9780140280197.jpg');
+          background-size: cover;
+          cursor: pointer;
+          background-position: center;
+          background-repeat: no-repeat;  
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+          ">>
+           
           </div>
         </div>
         <div class="info">
@@ -209,6 +251,7 @@
             
         </div>
       </div>
+    </div>
     </section>
     
     

@@ -26,12 +26,12 @@ export const AppStateReducer=(state=initialState, action)=>{
             return newState;
             break
         case 'OPENINGINFOBOOK':
-            newState = Object.assign({},state, {popupOpen:true})
+            newState = Object.assign({},state, {popupOpen:true, openInfoBook: action.payload})
             console.log("newState")
             return newState
              break
         case 'CLOSEINFOBOOK':
-            newState = Object.assign({},state, {popupOpen:false})
+            newState = Object.assign({},state, {popupOpen:false, openInfoBook: {}})
             return newState
              break
         case 'OPENMYLIST':

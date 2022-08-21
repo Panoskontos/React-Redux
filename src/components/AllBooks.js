@@ -18,7 +18,7 @@ function AllBooks(props){
             <>
             <div className="book-container">
           <div 
-          onClick={props.openInfoBook}
+          onClick={props.openInfoBook.bind(null,i)}
           className="book" 
           style={{ 
             backgroundImage: `url(`+ i.coverURL +`)`

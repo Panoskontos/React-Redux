@@ -10,7 +10,7 @@ function Modal(props){
       <div className="modal-container">
       <div className="modal-grid">
         <div className="images">
-          <div className="cover" style={{ backgroundImage: `url('https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/1402/9780140280197.jpg')`
+          <div className="cover" style={{ backgroundImage: `url(`+props.AppState.openInfoBook.coverURL+`)`
 }}>
            
           </div>
@@ -22,29 +22,28 @@ function Modal(props){
           >
             x
           </div>
-          <h2>Title</h2>
+          <h2>{props.AppState.openInfoBook.title}</h2>
           <div className="info-line">
             <span className="bold">
                 Author:
             </span>
-            Chris 
+            {props.AppState.openInfoBook.author}
           </div>
           <div className="info-line">
             <span className="bold">
                 Category:
             </span>
-            Action
+            {props.AppState.openInfoBook.category}
           </div>
           <div className="info-line">
             <span className="bold">
                 Published:
             </span>
-            1980
+            {props.AppState.openInfoBook.published}
           </div>
           <br />
           <div className="info-line desc" >
-            
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus eius, illo doloribus dolorem minus quasi assumenda blanditiis quo sequi accusantium, natus dolor iste nam fugit qui velit odio aspernatur.
+          {props.AppState.openInfoBook.description}
           </div>
             
         </div>

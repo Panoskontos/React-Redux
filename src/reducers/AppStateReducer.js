@@ -27,6 +27,7 @@ export const AppStateReducer=(state=initialState, action)=>{
             break
         case 'OPENINGINFOBOOK':
             newState = Object.assign({},state, {popupOpen:true})
+            console.log("newState")
             return newState
              break
         case 'CLOSEINFOBOOK':

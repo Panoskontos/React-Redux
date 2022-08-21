@@ -5,7 +5,8 @@ export default function Modal(){
       <div className="modal-container">
       <div className="modal-grid">
         <div className="images">
-          <div className="cover">
+          <div className="cover" style={{ backgroundImage: `url('https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/1402/9780140280197.jpg')`
+}}>
            
           </div>
         </div>

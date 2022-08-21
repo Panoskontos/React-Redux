@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import { openInfoBook} from '../actions/allActions'
 import { closeInfoBook} from '../actions/allActions'
+import {addingBook} from '../actions/allActions'
 
 function Modal(props){
     return(
@@ -42,9 +43,16 @@ function Modal(props){
             {props.AppState.openInfoBook.published}
           </div>
           <br />
+          
           <div className="info-line desc" >
           {props.AppState.openInfoBook.description}
           </div>
+          
+          <br />
+          <div className="addbtn" onClick={props.addingBook.bind(null, props.AppState.openInfoBook)}>
+            +
+          </div>
+
             
         </div>
       </div>
@@ -61,4 +69,4 @@ const mapStateToProps = (state) =>{
   }
   
 
-export default connect(mapStateToProps, {openInfoBook, closeInfoBook}) (Modal)
+export default connect(mapStateToProps, {openInfoBook, closeInfoBook,addingBook}) (Modal)

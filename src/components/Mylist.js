@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import { closeMyList} from '../actions/allActions'
-
+import {removeBook} from '../actions/allActions'
 
 function Mylist(props){
     return(
@@ -9,10 +9,18 @@ function Mylist(props){
         <h3>My list of books</h3>
         
         <ul>
-          <li>Harry Potter <span className="delete-btn">delete</span></li>
-          <li>Harry Potter <span className="delete-btn">delete</span></li>
-          <li>Harry Potter <span className="delete-btn">delete</span></li>
-          <li>Harry Potter <span className="delete-btn">delete</span></li>
+        {props.AppState.mylist.map((i)=>{
+            return(
+                <>
+                <li>{i.title} 
+                <span 
+                className="delete-btn"
+                onClick={props.removeBook.bind(null,i.id)}
+                >delete</span></li>
+                </>
+            )
+        })}
+          
         </ul>
 
         <div 
@@ -33,4 +41,4 @@ const mapStateToProps = (state) =>{
   }
   
 
-export default connect(mapStateToProps, {closeMyList}) (Mylist)
+export default connect(mapStateToProps, {closeMyList, removeBook}) (Mylist)

@@ -41,6 +41,45 @@
         height: 300px;
       }
 
+      #mylist{
+        background-color: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 100vh;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      #mylist h3{
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      #mylist ul li{
+        display: block;
+        padding: 10px 0;
+      }
+      #mylist ul li span.delete-btn{
+        display: inline-block;
+        padding: 5px 10px;
+        background: red;
+        color: white;
+        border-radius: 5px;
+        margin-left: 10px;
+      }
+
+      #mylist .close-list{
+        display: block;
+        margin: 0 auto;
+        background: black;
+        color: white;
+        padding: 20px 40px;
+        text-align: center;
+      }
+
     </style>
   </head>
   <body>
@@ -69,6 +108,20 @@
           </div>
         </div>
 
+      </section>
+
+      <section id="mylist">
+        <h3>My list of books</h3>
+        <ul>
+          <li>Harry Potter <span class="delete-btn">delete</span></li>
+          <li>Harry Potter <span class="delete-btn">delete</span></li>
+          <li>Harry Potter <span class="delete-btn">delete</span></li>
+          <li>Harry Potter <span class="delete-btn">delete</span></li>
+
+        </ul>
+        <div class="close-list">
+          Close
+        </div>
       </section>
     </div>
     

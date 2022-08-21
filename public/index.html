@@ -114,12 +114,14 @@
         align-items: center;
         height: 100vh;
         width: 100%;
+        background: rgba(0, 0, 0, 0.75);
 
       }
 
       #modal .modal-container{
         max-width: 600px;
         background: white;
+        border-radius: 5px;
         padding: 20px;
       }
 
@@ -129,14 +131,45 @@
         grid-gap: 20px;
       }
 
-      #modal .modal-grid .images{
-        width: 200px;
-      }
-
-      .cover{
+      #modal .modal-grid .images .cover{
         height: 300px;
         width: 200px;
       }
+
+      #modal .modal-grid .info h2{
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      #modal .modal-grid .info .info-line{
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+
+      #modal .modal-grid .info .info-line.desc{
+        line-height: 1.4;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+
+      .info{
+        position: relative;
+      }
+
+      .info .close-modal{
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        background-color: black;
+        color: aliceblue;
+        padding: 2px 8px;
+        border-radius: 5px;
+      }
+
+     
     </style>
   </head>
   <body>
@@ -199,8 +232,8 @@
           <li>Harry Potter <span class="delete-btn">delete</span></li>
 
         </ul>
-        <div class="close-list">
-          Close
+        <div class="close-btn">
+          close
         </div>
       </section>
     </div>
@@ -222,6 +255,9 @@
           </div>
         </div>
         <div class="info">
+          <div class="close-modal">
+            x
+          </div>
           <h2>Title</h2>
           <div class="info-line">
             <span class="bold">
@@ -242,10 +278,8 @@
             1980
           </div>
           <br>
-          <div class="info-line" style="max-width: 300px;">
-            <span class="bold">
-                Description:
-            </span>
+          <div class="info-line desc" style="max-width: 300px;">
+            
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus eius, illo doloribus dolorem minus quasi assumenda blanditiis quo sequi accusantium, natus dolor iste nam fugit qui velit odio aspernatur.
           </div>
             

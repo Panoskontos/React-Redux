@@ -115,7 +115,17 @@
         height: 100vh;
         width: 100%;
         background: rgba(0, 0, 0, 0.75);
+        opacity: 0;
+        visibility: hidden;
+        /* animation */
+        transition: all .4s ease-in-out;
+      }
 
+
+      #modal.active{
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.75);
+        opacity: 1;
       }
 
       #modal .modal-container{

@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { openInfoBook} from '../actions/allActions'
+import { openInfoBook, openMyList} from '../actions/allActions'
 
 function AllBooks(props){
   
@@ -8,22 +8,28 @@ function AllBooks(props){
         <>
         <section className="allbooks">
           
-          <div className="open-list">
+          <div className="open-list" onClick={props.openMyList}>
             List
           </div>
 
 
-        
-        <div className="book-container">
+        {props.booksData.map((i)=>{
+          return (
+            <>
+            <div className="book-container">
           <div 
           onClick={props.openInfoBook}
           className="book" 
           style={{ 
-            backgroundImage: `url('https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/1402/9780140280197.jpg')`
+            backgroundImage: `url(`+ i.coverURL +`)`
           }}
             >
           </div>
         </div>
+            </>
+          )
+        })}
+        
         
         
         
@@ -39,4 +45,4 @@ const mapStateToProps = (state) =>{
   return state
 }
 
-export default connect(mapStateToProps, {openInfoBook}) (AllBooks)
+export default connect(mapStateToProps, {openInfoBook,openMyList}) (AllBooks)

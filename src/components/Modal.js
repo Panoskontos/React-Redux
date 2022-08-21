@@ -1,7 +1,12 @@
-export default function Modal(){
+import { connect } from "react-redux"
+import { openInfoBook} from '../actions/allActions'
+import { closeInfoBook} from '../actions/allActions'
+
+function Modal(props){
     return(
         <>
-           <section id="modal" className="active">
+            {console.log('hey',props.AppState)}
+           <section id="modal" className={props.AppState.popupOpen?"active":''}>
       <div className="modal-container">
       <div className="modal-grid">
         <div className="images">
@@ -11,7 +16,10 @@ export default function Modal(){
           </div>
         </div>
         <div className="info">
-          <div className="close-modal">
+          <div 
+          className="close-modal"
+          onClick={props.closeInfoBook}
+          >
             x
           </div>
           <h2>Title</h2>
@@ -46,3 +54,12 @@ export default function Modal(){
         </>
     )
 }
+
+// injecting state
+const mapStateToProps = (state) =>{
+    console.log(state)
+    return state
+  }
+  
+
+export default connect(mapStateToProps, {openInfoBook, closeInfoBook}) (Modal)

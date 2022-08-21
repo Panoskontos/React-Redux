@@ -1,1 +1,1 @@
-This is a react redux library app 
+This is a react redux library app with some of my favorite books

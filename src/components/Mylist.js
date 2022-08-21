@@ -15,7 +15,7 @@ function Mylist(props){
                 <li>{i.title} 
                 <span 
                 className="delete-btn"
-                onClick={props.removeBook.bind(null,i.id)}
+                onClick={props.removeBook.bind(null,i)}
                 >delete</span></li>
                 </>
             )

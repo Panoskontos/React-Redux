@@ -21,7 +21,7 @@ export const AppStateReducer=(state=initialState, action)=>{
             break
         // remove object from array of objects
         case 'REMOVINGBOOK':
-            var newlist = state.filter((i)=>i.id !== action.payload)
+            var newlist = state.mylist.filter((book)=>book !== action.payload)
             newState = Object.assign({},state, {mylist:newlist})
             return newState;
             break

@@ -50,6 +50,13 @@
         height: 100vh;
         padding: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: translate3d(400px,0,0);
+        transition: all .4s ease-in-out;
+      }
+
+      #mylist.active{
+        transform: translate3d(0,0,0);
+
       }
 
       #mylist h3{
@@ -80,6 +87,23 @@
         text-align: center;
       }
 
+      .open-list{
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: black;
+        padding: 20px;
+        font-size: 3rem;
+        color: white;
+      }
+
+      .open-list.closed{
+        display: block;
+      }
+      .open-list.open{
+        display: none;
+      }
+
     </style>
   </head>
   <body>
@@ -88,6 +112,9 @@
     <div id="approot">
       <section class="allbooks">
         <div class="book-container">
+          <div class="open-list">
+            List
+          </div>
           <div class="book" 
           style="
           background-image: url('https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/1402/9780140280197.jpg');
@@ -144,6 +171,32 @@
         </div>
       </section>
     </div>
+
+    <section id="modal" class="active">
+      <div class="modal-grid">
+        <div class="images">
+          <div class="cover">
+            Cover image
+          </div>
+        </div>
+        <div class="info">
+          <h2>Title</h2>
+          <div class="info-line">
+            <span class="bold">
+                Author:
+            </span>
+            Chris 
+          </div>
+          <div class="info-line">
+            <span class="bold">
+                Category:
+            </span>
+            Action
+          </div>
+            
+        </div>
+      </div>
+    </section>
     
     
   </body>
